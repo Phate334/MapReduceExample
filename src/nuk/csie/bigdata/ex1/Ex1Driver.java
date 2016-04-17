@@ -1,7 +1,5 @@
 package nuk.csie.bigdata.ex1;
 
-import java.nio.file.Paths;
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -14,12 +12,12 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class Ex1Driver {
 
 	public static void main(String[] args) throws Exception {
-		
-		
+
 		// 建立Job
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf, "Add100");
 		job.setJarByClass(nuk.csie.bigdata.ex1.Ex1Driver.class);
+
 		// 指派Mapper和Reducer
 		job.setMapperClass(nuk.csie.bigdata.ex1.Ex1Map.class);
 		job.setReducerClass(nuk.csie.bigdata.ex1.Ex1Reduce.class);
@@ -28,9 +26,9 @@ public class Ex1Driver {
 		job.setOutputKeyClass(NullWritable.class);
 		job.setOutputValueClass(IntWritable.class);
 		job.setMapOutputKeyClass(IntWritable.class);
-		
+
 		// 輸入及輸出路徑
-		Path input = new Path(Paths.get("data", "ex1.txt").toString());
+		Path input = new Path("data", "ex1.txt");
 		Path output = new Path("out", "ex1");
 		// 指派Job的輸入及輸出路徑
 		FileInputFormat.setInputPaths(job, input);

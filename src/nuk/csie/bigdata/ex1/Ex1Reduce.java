@@ -16,7 +16,7 @@ public class Ex1Reduce extends Reducer<IntWritable, IntWritable, NullWritable, I
 		for (IntWritable val : values) {
 			counter += val.get();
 		}
-		
+
 		context.write(NullWritable.get(), new IntWritable(counter));
 	}
 
