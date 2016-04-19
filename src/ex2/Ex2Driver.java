@@ -1,4 +1,4 @@
-package nuk.csie.bigdata.ex2;
+package ex2;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -19,11 +19,11 @@ public class Ex2Driver {
 		// 建立Job
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf, "NumberClasser");
-		job.setJarByClass(nuk.csie.bigdata.ex2.Ex2Driver.class);
+		job.setJarByClass(ex2.Ex2Driver.class);
 
 		// 指派Mapper和Reducer
-		job.setMapperClass(nuk.csie.bigdata.ex2.Ex2Map.class);
-		job.setReducerClass(nuk.csie.bigdata.ex2.Ex2Reduce.class);
+		job.setMapperClass(ex2.Ex2Map.class);
+		job.setReducerClass(ex2.Ex2Reduce.class);
 
 		// 指派輸出型態
 		job.setMapOutputKeyClass(Text.class);

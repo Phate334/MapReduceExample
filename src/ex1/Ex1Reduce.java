@@ -1,4 +1,4 @@
-package nuk.csie.bigdata.ex1;
+package ex1;
 
 import java.io.IOException;
 

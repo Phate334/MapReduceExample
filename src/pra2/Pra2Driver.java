@@ -1,4 +1,4 @@
-package nuk.csie.bigdata.pra2;
+package pra2;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -16,10 +16,10 @@ public class Pra2Driver {
 	public static void main(String[] args) throws Exception {
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf, "Wrod classer");
-		job.setJarByClass(nuk.csie.bigdata.pra2.Pra2Driver.class);
-		job.setMapperClass(nuk.csie.bigdata.pra2.Pra2Map.class);
+		job.setJarByClass(pra2.Pra2Driver.class);
+		job.setMapperClass(pra2.Pra2Map.class);
 
-		job.setReducerClass(nuk.csie.bigdata.pra2.Pra2Reduce.class);
+		job.setReducerClass(pra2.Pra2Reduce.class);
 
 		// TODO: specify output types
 		job.setOutputKeyClass(Text.class);

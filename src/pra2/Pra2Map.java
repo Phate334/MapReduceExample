@@ -1,4 +1,4 @@
-package nuk.csie.bigdata.pra2;
+package pra2;
 
 import java.io.IOException;
 

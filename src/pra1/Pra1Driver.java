@@ -1,4 +1,4 @@
-package nuk.csie.bigdata.pra1;
+package pra1;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -16,9 +16,9 @@ public class Pra1Driver {
 	public static void main(String[] args) throws Exception {
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf, "WordCount");
-		job.setJarByClass(nuk.csie.bigdata.pra1.Pra1Driver.class);
-		job.setMapperClass(nuk.csie.bigdata.pra1.Pra1Map.class);
-		job.setReducerClass(nuk.csie.bigdata.pra1.Pra1Reduce.class);
+		job.setJarByClass(pra1.Pra1Driver.class);
+		job.setMapperClass(pra1.Pra1Map.class);
+		job.setReducerClass(pra1.Pra1Reduce.class);
 
 		// TODO: specify output types
 		job.setOutputKeyClass(Text.class);

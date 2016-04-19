@@ -1,4 +1,4 @@
-package nuk.csie.bigdata.ex1;
+package ex1;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -16,11 +16,11 @@ public class Ex1Driver {
 		// 建立Job
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf, "Add100");
-		job.setJarByClass(nuk.csie.bigdata.ex1.Ex1Driver.class);
+		job.setJarByClass(ex1.Ex1Driver.class);
 
 		// 指派Mapper和Reducer
-		job.setMapperClass(nuk.csie.bigdata.ex1.Ex1Map.class);
-		job.setReducerClass(nuk.csie.bigdata.ex1.Ex1Reduce.class);
+		job.setMapperClass(ex1.Ex1Map.class);
+		job.setReducerClass(ex1.Ex1Reduce.class);
 
 		// 指派輸出型態
 		job.setOutputKeyClass(NullWritable.class);
