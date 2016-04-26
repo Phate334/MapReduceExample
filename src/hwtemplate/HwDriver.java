@@ -37,9 +37,9 @@ public class HwDriver {
 
 		// 開始建立Job
 		Job job = Job.getInstance(conf, "BikeShareGroupBy");
-		job.setJarByClass(homework.HwDriver.class);
-		job.setMapperClass(homework.HwMap.class);
-		job.setReducerClass(homework.HwReduce.class);
+		job.setJarByClass(HwDriver.class);
+		job.setMapperClass(HwMap.class);
+		job.setReducerClass(HwReduce.class);
 
 		// 輸出資料型態
 		job.setOutputKeyClass(Text.class);
